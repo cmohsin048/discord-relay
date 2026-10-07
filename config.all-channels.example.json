@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "name": "whole-server",
+      "source_server_ids": ["REPLACE_WITH_SOURCE_SERVER_ID"],
+      "source_channel_ids": [],
+      "all_source_channels": true,
+      "include_threads": true,
+      "source_author_ids": [],
+      "destination_server_id": "REPLACE_WITH_DESTINATION_SERVER_ID",
+      "webhook_env": "DISCORD_DEST_WEBHOOK"
+    }
+  ],
+  "max_total_attachment_mb": 25,
+  "max_pending_messages": 5000
+}

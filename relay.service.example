@@ -1,0 +1,26 @@
+[Unit]
+Description=Discord message relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=discord-relay
+WorkingDirectory=/opt/discord-relay
+EnvironmentFile=/etc/discord-relay.env
+Environment=RELAY_DATA_DIR=/var/lib/discord-relay
+StateDirectory=discord-relay
+# This template runs the OFFLINE check only. It does not forward messages.
+# Live mode needs an intentional --live addition and carries account-ban risk.
+ExecStart=/opt/discord-relay/.venv/bin/python /opt/discord-relay/relay.py
+Restart=on-failure
+RestartSec=30
+RestartPreventExitStatus=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

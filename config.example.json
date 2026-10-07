@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "name": "signals",
+      "source_server_ids": ["REPLACE_WITH_SOURCE_SERVER_ID"],
+      "source_channel_ids": ["REPLACE_WITH_SOURCE_CHANNEL_ID", "REPLACE_WITH_ANOTHER_CHANNEL_ID"],
+      "all_source_channels": false,
+      "include_threads": false,
+      "source_author_ids": [],
+      "destination_server_id": "REPLACE_WITH_DESTINATION_SERVER_ID",
+      "webhook_env": "RELAY_WEBHOOK_SIGNALS",
+      "webhook_username": "Signal Relay"
+    },
+    {
+      "name": "news",
+      "source_server_ids": ["REPLACE_WITH_SOURCE_SERVER_ID", "REPLACE_WITH_SECOND_SOURCE_SERVER_ID"],
+      "source_channel_ids": ["REPLACE_WITH_NEWS_CHANNEL_ID", "REPLACE_WITH_CHANNEL_IN_SECOND_SERVER"],
+      "all_source_channels": false,
+      "include_threads": false,
+      "source_author_ids": [],
+      "destination_server_id": "REPLACE_WITH_DESTINATION_SERVER_ID",
+      "webhook_env": "RELAY_WEBHOOK_NEWS",
+      "webhook_username": "News Relay"
+    }
+  ],
+  "max_total_attachment_mb": 25,
+  "max_pending_messages": 5000
+}
